@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | A.J. Vetturini</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="about_me.html">About me</a></li>
+                <li><a href="cv_page.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="publications.html" onclick="toggleMenu()">Publications</a></li>
+                <li><a href="about_me.html" onclick="toggleMenu()">About me</a></li>
+                <li><a href="cv_page.html" onclick="toggleMenu()">CV</a></li>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="publication-container publications"></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
