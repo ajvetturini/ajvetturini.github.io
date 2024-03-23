@@ -271,6 +271,7 @@ section {
     display: flex;
     flex-direction: column; /* This stacks its children vertically */
     justify-content: center; /* Aligns children vertically centered */
+    padding-top: 100px;
 }
 
 .section__text__p2 a {
