@@ -55,10 +55,12 @@ function generatePublicationHTML(publication) {
                     <div><i>${publication.journal}</i>, <b>${publication.volume}</b>, ${publication.pages}, ${publication.year}.</div>
                     <br>
                 <div>${metadataText}</div>
-            </div>
-            <div class="download-buttons-container">
-                <button class="download-button" data-title="${publication.file}">PDF</button>
-                ${buttonHTML}
+                <br></br>
+                <div class="download-buttons-container">
+                    <button class="download-button" data-title="${publication.file}">PDF</button>
+                    ${buttonHTML}
+                </div>
+
             </div>
         </div>
             
@@ -135,4 +137,6 @@ function renderPublications() {
 }
 
 // Call the function to render publications
-renderPublications();
+if (window.location.href.includes('publications.html')) {
+    renderPublications();
+}

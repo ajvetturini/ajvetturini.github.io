@@ -17,6 +17,12 @@
     padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -92,6 +98,7 @@ a:hover {
 .hamburger-menu {
     position: relative;
     display: inline-block;
+    z-index: 1000;
 }
 
 .hamburger-icon {
@@ -138,6 +145,7 @@ a:hover {
 
 .menu-links.open {
     max-height: 300px;
+    border: 2px solid var(--border-color);
 }
 
 .hamburger-icon.open span:first-child {
@@ -190,41 +198,46 @@ section {
 #profile {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 5rem;
-    height: 20vh;
 }
 
 .section__pic-container {
     display: block;
-    height: 300px;
-    width: 300px;
     margin: auto 0;
-    transform: translateY(80px);
+    transform: translateY(-240px);
 }
 
-.section__pic-container img{
-    height: 300px;
-    width: 300px;
+.section__pic-container img {
+    height: auto;
+    max-width: 100%;
 }
 
 .section__pic-container2 {
     display: block;
-    height: 300px;
-    width: 300px;
     margin: auto 0;
-    transform: translateY(-80px);
+    transform: translateY(-240px);
 }
 
 .section__pic-container2 img{
-    height: 300px;
-    width: 300px;
+    height: auto;
+    max-width: 100%;
+}
+
+.news__container ul {
+    list-style-type: none; /* Removes the default list styling, if desired */
+    padding-left: 0; /* Removes the default indentation of list */
+}
+
+.news__container li {
+    line-height: 1; /* Adjusts the spacing between lines of text in the items */
+    margin-bottom: 0.5rem; /* Adds space below each list item; adjust as needed */
 }
 
 
 .section__text {
     align-self: center;
     text-align: center;
-    margin-top: 17vh;; 
 }
 
 .title {
@@ -240,12 +253,11 @@ section {
 }
 
 .section__text__p1 {
-    position: relative;
     text-align: left; /* Aligns children vertically centered */
+    justify-content: center;
     font-size: 2rem;
     color: var(--text-color);
     font-weight: 600;
-    padding-top: 180px;
 }
 
 .section__text__p2 {
@@ -269,9 +281,23 @@ section {
 
 .text-socials-container {
     display: flex;
-    flex-direction: column; /* This stacks its children vertically */
-    justify-content: center; /* Aligns children vertically centered */
-    padding-top: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px; /* Add some padding at the bottom to prevent overlap with the image */
+}
+
+.image-container {
+    max-width: 80%; /* Ensure the container doesn't exceed the width of its content */
+}
+
+.image-container img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+    display: block; /* Remove any extra space under the images */
+    margin-bottom: 10px; /* Add space between the images */
+    transform: translateY(60px);
 }
 
 .section__text__p2 a {
@@ -291,13 +317,14 @@ section {
 
 .research__pic-container {
     display: flex;
-    margin: auto 0;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    flex-direction: column;
+    text-align: center;
 }
 
 .research__pic-container img {
-    max-width: 120%; /* Image will take up maximum of its container's width */
+    max-width: 100%; /* Image will take up maximum of its container's width */
     max-height: 220px; /* Example height limit */
 }
 
@@ -346,12 +373,14 @@ section {
     border: 2px solid var(--border-color);
     margin-bottom: 20px;
     padding: 10px;
-    width: 850px;
-    height: 200px;
+    /*width: 850px;
+    height: 200px;*/
+    max-width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
-    
 }
+
 .publication img {
     position: relative;
     width: 200px;
@@ -380,9 +409,6 @@ section {
 
 .download-buttons-container {
     display: flex;
-    position: absolute;
-    bottom: calc(0% + 10px); /* Position it just below the publication content */
-    left: calc(0% + 235px);
     gap: 10px; /* Adjust the space between the buttons */
 }
 
