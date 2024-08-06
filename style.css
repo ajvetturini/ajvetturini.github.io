@@ -7,8 +7,8 @@
     --dark-bg-color: #ffffff; /* Define dark background color variable */
     --text-color: black; /* Define text color variable */
     --border-color: rgb(153, 153, 153);
-    --hover-color: #ab7ce0;
-    --hover-color2: #6bbfd8bb;
+    --hover-color: rgb(171, 124, 224);
+    --hover-color2: rgba(107, 191, 216, 0.733);
     --pub-title: #03030398;
 }
 
@@ -203,9 +203,11 @@ section {
 }
 
 .section__pic-container {
-    display: block;
-    margin: auto 0;
-    transform: translateY(-240px);
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;    /* Center images horizontally */
+    width: 2000px; 
+    overflow: hidden;
 }
 
 .section__pic-container img {
@@ -213,20 +215,14 @@ section {
     max-width: 100%;
 }
 
-.section__pic-container2 {
-    display: block;
-    margin: auto 0;
-    transform: translateY(-240px);
-}
-
-.section__pic-container2 img{
-    height: auto;
-    max-width: 100%;
-}
 
 .news__container ul {
     list-style-type: none; /* Removes the default list styling, if desired */
     padding-left: 0; /* Removes the default indentation of list */
+}
+
+.text-socials-container ul{
+    list-style-type: none;
 }
 
 .news__container li {
@@ -237,7 +233,6 @@ section {
 
 .section__text {
     align-self: center;
-    text-align: center;
 }
 
 .title {
@@ -267,12 +262,6 @@ section {
     line-height: 1.75;
 }
 
-.section__text__p3 {
-    text-align: left; /* Aligns children vertically centered */
-    font-size: 2rem;
-    color: var(--text-color);
-    font-weight: 600;
-}
 
 .news__container {
     text-align: left; /* Aligns children vertically centered */
@@ -308,6 +297,7 @@ section {
 .section__text__p2 a:hover {
     color: var(--hover-color2);
 }
+
 
 #research-preview {
     display: flex;
