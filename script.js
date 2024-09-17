@@ -36,6 +36,7 @@ function parseLocalJSONFile(path) {
 function generatePublicationHTML(publication) {
     let buttonHTML = '';
     let metadataText = '';
+    let downloadButton = true;
     // Check if project_page exists in the publication
     if (!(publication.project_page === "None")) {
         // If project_page exists, generate HTML for the button
@@ -44,8 +45,31 @@ function generatePublicationHTML(publication) {
     if (!(publication.metadata === "None")) {
         metadataText = publication.metadata;
     }
+    if (publication.file === "NA") {
+        downloadButton = false;
+    }
+    
     const authorsString = publication.authors;
     const boldAuthorString = authorsString.replace(/A\. Vetturini/g, '<b>A. Vetturini</b>');
+
+    if (publication.metadata === "In revision") {
+        // Use a separete return statement for in revision articles:
+        return `
+            <div class="publication">
+                <img src=${publication.image_preview} alt="Publication Image">
+                <div class="publication-content">
+                    <div style="align-self: flex-start;" class="pub-title"><b>${publication.title}</b></div>
+                        <div>${boldAuthorString}</div>
+                        <br>
+                    <div>${metadataText}</div>
+                    <br></br>
+                </div>
+            </div>
+                
+            </div>
+        `;
+    }
+    // Otherwise return based on everything:
     return `
         <div class="publication">
             <img src=${publication.image_preview} alt="Publication Image">
@@ -58,7 +82,7 @@ function generatePublicationHTML(publication) {
                 <br></br>
                 <div class="download-buttons-container">
                     <button class="download-button" data-title="${publication.file}">PDF</button>
-                    ${buttonHTML}
+                    ${downloadButton ? buttonHTML : ''}
                 </div>
 
             </div>
