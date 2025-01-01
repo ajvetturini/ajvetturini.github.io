@@ -1,0 +1,41 @@
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    {% if author.avatar contains "://" %}
+    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
+    {% else %}
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    {% endif %}
+  </div>
+
+  <!-- Divider Section -->
+  <div class="author__divider" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+    <div style="font-size: 18px; font-weight: bold;">A.J. Vetturini</div>
+    <div style="font-size: 14px; ">Ph.D. student | NDSEG fellow</div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+      <span style="font-size: 18px; margin-right: 5px;">🏛️</span>
+      <span style="font-size: 14px;">Carnegie Mellon University</span>
+    </div>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Socials</button>
+    <ul class="author__urls social-icons">
+      <!-- First Row -->
+      <li><a href="https://scholar.google.com/citations?hl=en&user=gS0pvaAAAAAJ" target="_blank" class="icon-link" title="Google Scholar"><i class="fa-brands fa-google-scholar fa-2x"></i></a></li>
+      <li><a href="mailto:avetturi@andrew.cmu.edu" target="_blank" class="icon-link" title="Email"><i class="fa-regular fa-envelope fa-2x"></i></a></li>
+      <li><a href="https://orcid.org/0009-0005-3822-5138" target="_blank" class="icon-link" title="ORCID"><i class="fa-brands fa-orcid fa-2x"></i></a></li>
+
+      <!-- Second Row -->
+      <li><a href="https://twitter.com/AJ_Vetturini" target="_blank" class="icon-link" title="Twitter"><i class="fa-brands fa-x-twitter fa-2x"></i></a></li>
+      <li><a href="https://github.com/ajvetturini" target="_blank" class="icon-link" title="GitHub"><i class="fa-brands fa-square-github"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/a-j-vetturini-51202a191/" target="_blank" class="icon-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,258 @@
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+/*
+   Default
+   ========================================================================== */
+
+.sidebar {
+  -webkit-transform: translate3d(0, 0 , 0);
+          transform: translate3d(0, 0 , 0);
+
+  @include clearfix();
+  margin-bottom: 1em;
+
+  @media screen and (min-width: $sidebar-screen-min-width) {
+    height: 100vh;
+    overflow-y: auto;               // Add scrollbar if the sidebar is too long
+    position: fixed;
+    padding-top: $masthead-height;
+  }
+
+  @include breakpoint($large) {
+    @include span(2 of 12);
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint($x-large) {
+    max-width: $sidebar-link-max-width;
+    padding-right: 0;
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+    font-family: $sans-serif-narrow;
+  }
+
+  h3, h4 {
+    font-size: $type-size-5;
+  }
+
+  p, li {
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    line-height: 1.5;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.sidebar__right {
+  margin-bottom: 1em;
+
+  @include breakpoint($large) {
+    position: relative;
+    float: right;
+    width: $right-sidebar-width-narrow;
+    margin-left: span(0.5 of 12);
+    z-index: 10;
+  }
+
+  @include breakpoint($x-large) {
+    width: $right-sidebar-width;
+  }
+}
+
+/*
+   Author profile and links
+   ========================================================================== */
+
+.author__avatar {
+  display: flex;               /* Use flexbox for alignment */
+  justify-content: center;     /* Center horizontally */
+  align-items: center;
+  // width: 36px;
+  width: auto;
+  // set width only, for non-square avatars
+  // height: 36px;
+
+  @include breakpoint($large) {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  img {
+    max-width: 250px;
+    border-radius: 50%;
+
+    @include breakpoint($large) {
+      padding: 5px;
+      border: 1px solid $border-color;
+    }
+  }
+}
+
+.author__content {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 15px;
+  padding-right: 25px;
+  line-height: 1;
+
+  @include breakpoint($large) {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.author__name {
+  margin: 0;
+
+  @include breakpoint($large) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+.sidebar .author__name {
+  font-family: $sans-serif;
+  font-size: $type-size-5;
+}
+
+.sidebar .author__desktop {
+  display: none;
+  @media screen and (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.author__pronouns {
+  margin: 0;
+
+  @include breakpoint($large) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.author__bio {
+  margin: 0;
+
+  @include breakpoint($large) {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.author__urls-wrapper {
+  position: relative;
+  display: flex;                // Use flexbox for alignment
+  justify-content: center;      // Center horizontally
+  align-items: center;          // Center vertically
+  flex-direction: column;       // Stack content vertically
+  font-family: $sans-serif;
+  z-index: 10;
+  cursor: pointer;
+
+  li:last-child {
+    a {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint($large) {
+    display: block;
+  }
+
+  button {
+    margin-bottom: 0;
+
+    @include breakpoint($large) {
+      display: none;
+    }
+  }
+}
+
+.author__urls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+  gap: 10px; /* Space between icons */
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0; /* Adjust margin as needed */
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+
+  @include breakpoint($large) {
+    display: grid;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Slightly larger gap for larger screens */
+  }
+
+  .social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 2rem; /* Icon size */
+    color: #000; /* Default icon color */
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Smooth color and transform transition */
+    
+    /* Ensure the icon itself resizes appropriately */
+    width: 3rem; /* Icon size (adjust this to match the desired size) */
+    height: 3rem; /* Maintain aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: $aj-purple; /* Change color on hover */
+      transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    }
+  }
+
+  /* Ensure icons don't distort or overflow */
+  i {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    font-size: 2rem; /* Adjust for default icon size */
+    text-align: center;
+    line-height: 3rem; /* Centers icon within the block */
+  }
+
+  /* Remove unnecessary dropdown arrow styles for this layout */
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.wordwrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

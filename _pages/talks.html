@@ -1,0 +1,12 @@
+---
+layout: archive
+title: "Talks"
+permalink: /talks/
+author_profile: true
+---
+
+<div>Below is a list of talks I have given along with a link to the accompanying slide deck. Please note that I often use animations in my slides, and thus you may need to click-through the powerpoint to read the slides.</div>
+
+{% for post in site.talks reversed %}
+  {% include archive-single-talk.html %}
+{% endfor %}
