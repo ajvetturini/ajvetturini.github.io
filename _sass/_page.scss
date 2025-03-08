@@ -421,3 +421,20 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;  /* Adjust spacing between links */
+  row-gap: 10px;
+  justify-content: center; /* Center the links */
+  text-align: center;
+  margin-bottom: 10px; /* Adds space below the nav bar */
+}
+
+.top-nav a {
+  white-space: nowrap;  /* Prevent text wrapping inside each link */
+  font-size: 24px; /* Increase font size */
+  color: #494E52; /* Change text color to gray */
+  text-decoration: none; /* Optional: remove underline */
+}
