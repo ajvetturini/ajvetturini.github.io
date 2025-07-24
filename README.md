@@ -1,11 +1,13 @@
 # Academic Pages
-This is a fork of Academic Pages. Overall, I would not fork this repository because I hard-coded in some specific values for ease of linking.
+
+This is a fork of Academic Pages. Overall, I would not fork this (i.e., my) repository because I hard-coded in some specific values for ease of linking.
 
 **Academic Pages is a Github Pages template for academic websites.**
 
-See more info at https://academicpages.github.io/
+See more info of this webpage from the original fork at https://academicpages.github.io/
 
 ---
+
 <div align="center">
     
 ![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
@@ -15,4 +17,5 @@ See more info at https://academicpages.github.io/
 
 [![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
 [![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
+
 </div>
