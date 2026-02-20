@@ -214,6 +214,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  code:
+    output: true
+    permalink: /:collection/:path
   
 
 
@@ -246,12 +249,20 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _presentations
+  # _talks
   - scope:
       path: ""
       type: talks
     values:
       layout: talk
+      author_profile: false
+      share: true
+  # _code
+  - scope:
+      path: ""
+      type: code
+    values:
+      layout: code
       author_profile: false
       share: true
 

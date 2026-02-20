@@ -6,6 +6,13 @@ This is a fork of Academic Pages. Overall, I would not fork this (i.e., my) repo
 
 See more info of this webpage from the original fork at https://academicpages.github.io/
 
+# Running Locally
+
+This assumes you have ruby and nodejs installed (requirements to Academic Pages)
+
+```jekyll exec serve -l -H localhost``` can eb used to generate the HTML and server from localhost:4000. 
+
+Note that updating core templates / configuration files will require you to restart the server.
 ---
 
 <div align="center">
